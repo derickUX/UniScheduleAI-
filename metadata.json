@@ -1,0 +1,6 @@
+{
+  "name": "Class Schedule | Modern Student Timetable",
+  "description": "Clean, student-focused class schedule and timetable application with automatic COR parser, calendar sync, and responsive weekly calendar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Purple Gradient matching user image -->
+    <linearGradient id="purpleRing" x1="120" y1="80" x2="380" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="35%" stop-color="#9333EA" />
+      <stop offset="70%" stop-color="#7E22CE" />
+      <stop offset="100%" stop-color="#6B21A8" />
+    </linearGradient>
+
+    <!-- White Ring Gradient with subtle 3D lighting -->
+    <linearGradient id="whiteRing" x1="160" y1="380" x2="400" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Soft Depth Shadows at Interlocking Joints -->
+    <filter id="jointShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <g transform="translate(0, 5)">
+    <!-- LAYER 1: BASE PURPLE 3-LOBED STAR RING (Points 0: Top, 2: Bottom-Right, 4: Top-Left) -->
+    <!-- Center (256, 256), R=145, r_notch=62, tube stroke=34 -->
+    <path
+      id="purple-base"
+      d="M 256 96
+         C 285 96 304 128 300 162
+         C 294 212 308 245 338 274
+         C 368 304 402 334 380 368
+         C 360 400 324 402 292 376
+         C 256 348 224 350 188 376
+         C 156 402 120 400 100 368
+         C 78 334 112 304 142 274
+         C 172 245 186 212 180 162
+         C 176 128 195 96 224 96
+         Z"
+      stroke="url(#purpleRing)"
+      stroke-width="36"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+
+    <!-- LAYER 2: WHITE 2-LOBED OBLONG RING (Points 1: Top-Right, 3: Bottom-Left) -->
+    <path
+      id="white-ring"
+      d="M 408 214
+         C 434 238 418 272 382 296
+         C 334 328 284 354 220 376
+         C 176 392 140 388 126 364
+         C 112 338 128 306 164 282
+         C 212 250 272 224 340 204
+         C 378 192 396 200 408 214
+         Z"
+      stroke="url(#whiteRing)"
+      stroke-width="36"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      filter="url(#jointShadow)"
+    />
+
+    <!-- LAYER 3: INTERLOCKING OVERLAYS (PURPLE SEGMENTS CROSSING OVER WHITE) -->
+    <!-- Top-Right Purple Strand crosses over White Ring: from Top Apex towards Bottom-Right -->
+    <path
+      id="purple-over-tr"
+      d="M 288 140
+         C 294 185 308 230 338 270"
+      stroke="url(#purpleRing)"
+      stroke-width="36"
+      stroke-linecap="round"
+      fill="none"
+      filter="url(#jointShadow)"
+    />
+
+    <!-- Bottom-Left Purple Strand crosses over White Ring: between Point 4 and Point 2 -->
+    <path
+      id="purple-over-bl"
+      d="M 125 348
+         C 142 368 170 382 205 372
+         C 230 364 256 352 285 358"
+      stroke="url(#purpleRing)"
+      stroke-width="36"
+      stroke-linecap="round"
+      fill="none"
+      filter="url(#jointShadow)"
+    />
+
+    <!-- LAYER 4: WHITE SEGMENTS CROSSING OVER PURPLE -->
+    <!-- Mid-Left: White upper band crosses over Purple strand rising from left to top -->
+    <path
+      id="white-over-ml"
+      d="M 152 288
+         C 188 264 234 244 285 230"
+      stroke="url(#whiteRing)"
+      stroke-width="36"
+      stroke-linecap="round"
+      fill="none"
+      filter="url(#jointShadow)"
+    />
+  </g>
+</svg>
